@@ -1,0 +1,5 @@
+br\senac\tads\dsw\filmes\PopulacaoInicialBanco.class
+br\senac\tads\dsw\filmes\cadastro\filme\FilmeRepositorio.class
+br\senac\tads\dsw\filmes\SpringFilmesApplication.class
+br\senac\tads\dsw\filmes\controle\FilmeControle.class
+br\senac\tads\dsw\filmes\cadastro\filme\Filme.class

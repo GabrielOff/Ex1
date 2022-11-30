@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Listagem de Filmes</title>
+
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+              crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container my-2">
+            <a th:href="@{/lc/filmes/novo}" class="btn btn-primary btn-sm mb-3">Incluir Filme</a>
+            <h1>Listagem de Filmes</h1>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Filme</th>
+                        <th>Gênero</th>
+                        <th>Ano de Lançamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="filme : ${listaFilmes}">
+                        <td th:text="${filme.id}"></td>
+                        <td th:text="${filme.filme}"></td>
+                        <td th:text="${filme.genero}"></td>
+                        <td th:text="${filme.dataLancamento}"></td>
+                        <td>	
+                            <a th:href="@{/lc/filmes/{id}(id=${filme.id})}" class="btn btn-primary">alterar</a>
+                            <a th:href="@{/lc/filmes/excluir/{id}(id=${filme.id})}" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

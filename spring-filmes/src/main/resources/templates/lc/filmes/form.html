@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro de Filme</title>
+
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container my-2">
+            <h1>Cadastro de Filme</h1>
+            <hr>
+            <h2>Editar Filme</h2>
+            <form action="#" th:action="@{/lc/filmes/salvar}" th:object="${filme}" method="POST">
+                <input type="hidden" id="id" th:field="*{id}">
+                <input type="text" th:field="*{filme}" placeholder="Nome do Filme" class="form-control mb-4 col-4">
+                <input type="text" th:field="*{genero}" placeholder="Gênero do Filme" class="form-control mb-4 col-4">
+                <input type="date" th:field="*{dataLancamento}" placeholder="Data Lançamento" class="form-control mb-4 col-4">
+                <button type="submit" class="btn btn-info col-2">Salvar</button>
+                <td><button type="submit" class="btn-danger">Cancelar</button></td>
+            </form>
+            <hr>
+        </div>
+    </body>
+</html>
